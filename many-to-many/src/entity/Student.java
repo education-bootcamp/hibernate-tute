@@ -1,6 +1,7 @@
 package entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity(name = "student_table")
@@ -13,6 +14,9 @@ public class Student {
 
     //--------------mapping----------------
 
+    @ManyToMany(mappedBy = "students")
+    private List<Course> courses = new ArrayList<>();
+
     //----------------mapping--------------
 
     public Student() {
@@ -23,6 +27,13 @@ public class Student {
         this.studentName = studentName;
     }
 
+    public List<Course> getCourses() {
+        return courses;
+    }
+
+    public void setCourses(List<Course> courses) {
+        this.courses = courses;
+    }
 
     public long getStudentId() {
         return studentId;
