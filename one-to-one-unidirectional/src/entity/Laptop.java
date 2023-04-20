@@ -5,7 +5,7 @@ import javax.persistence.*;
 @Entity(name = "laptop_table")
 public class Laptop {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "lap_id")
     private long laptopId;
     private String brand;
