@@ -11,8 +11,7 @@ public class Student {
     private String studentName;
 
     //--------------mapping----------------
-    @OneToOne
-    @JoinColumn(name = "laptop_id")
+    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
     private Laptop laptop;
     //----------------mapping--------------
 
