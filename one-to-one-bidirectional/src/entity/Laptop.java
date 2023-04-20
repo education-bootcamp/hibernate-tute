@@ -11,17 +11,17 @@ public class Laptop {
     private String brand;
 
     //-------mapping---------
-    @OneToOne
-    @JoinColumn(name = "student_id", unique = true)
+    @OneToOne(mappedBy = "laptop")
     private Student student;
     //-------mapping---------
 
     public Laptop() {
     }
 
-    public Laptop(long laptopId, String brand) {
+    public Laptop(long laptopId, String brand, Student student) {
         this.laptopId = laptopId;
         this.brand = brand;
+        this.student = student;
     }
 
     public Student getStudent() {
@@ -47,4 +47,6 @@ public class Laptop {
     public void setBrand(String brand) {
         this.brand = brand;
     }
+
+
 }

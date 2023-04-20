@@ -11,16 +11,18 @@ public class Student {
     private String studentName;
 
     //--------------mapping----------------
-    @OneToOne(mappedBy = "student", cascade = CascadeType.ALL)
+    @OneToOne(cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "laptop_id")
     private Laptop laptop;
     //----------------mapping--------------
 
     public Student() {
     }
 
-    public Student(long studentId, String studentName) {
+    public Student(long studentId, String studentName, Laptop laptop) {
         this.studentId = studentId;
         this.studentName = studentName;
+        this.laptop = laptop;
     }
 
     public Laptop getLaptop() {
@@ -46,4 +48,6 @@ public class Student {
     public void setStudentName(String studentName) {
         this.studentName = studentName;
     }
+
+
 }
