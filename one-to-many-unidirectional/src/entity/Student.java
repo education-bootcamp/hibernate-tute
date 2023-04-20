@@ -13,6 +13,11 @@ public class Student {
 
     //--------------mapping----------------
     @OneToMany(cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "student_laptop_details",
+            joinColumns = @JoinColumn(name = "stu_id"),
+            inverseJoinColumns = @JoinColumn(name = "lap_id")
+    )
     private List<Laptop> laptops;
     //----------------mapping--------------
 
