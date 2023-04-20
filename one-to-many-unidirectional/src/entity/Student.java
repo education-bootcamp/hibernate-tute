@@ -11,27 +11,17 @@ public class Student {
     private String studentName;
 
     //--------------mapping----------------
-    @OneToOne(cascade = CascadeType.PERSIST)
-    @JoinColumn(name = "laptop_id")
-    private Laptop laptop;
+
     //----------------mapping--------------
 
     public Student() {
     }
 
-    public Student(long studentId, String studentName, Laptop laptop) {
+    public Student(long studentId, String studentName) {
         this.studentId = studentId;
         this.studentName = studentName;
-        this.laptop = laptop;
     }
 
-    public Laptop getLaptop() {
-        return laptop;
-    }
-
-    public void setLaptop(Laptop laptop) {
-        this.laptop = laptop;
-    }
 
     public long getStudentId() {
         return studentId;
