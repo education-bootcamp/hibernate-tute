@@ -12,11 +12,10 @@ public class Student {
     private String studentName;
 
     //--------------mapping----------------
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "student_laptop_details",
-            joinColumns = @JoinColumn(name = "stu_id"),
-            inverseJoinColumns = @JoinColumn(name = "lap_id")
+    @OneToMany(
+            mappedBy = "student",
+            cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER
     )
     private List<Laptop> laptops;
     //----------------mapping--------------
