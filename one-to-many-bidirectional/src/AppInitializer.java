@@ -30,7 +30,8 @@ public class AppInitializer {
             Student selectedStudent = session.get(Student.class, (long) 1);
             System.out.println(selectedStudent.getStudentName());
             System.out.println("================");
-            selectedStudent.getLaptop().stream().forEach(e-> System.out.println(e.getBrand()));
+            selectedStudent.getLaptop().stream()
+                    .forEach(e-> System.out.println(e.getBrand()));
             System.out.println("================");
         }
 
